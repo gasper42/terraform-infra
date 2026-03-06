@@ -19,3 +19,10 @@ terraform apply
 ```
 
 and check what will be deployed and confirm.
+
+At the end run:
+```
+aws eks --region $(terraform output -raw region) update-kubeconfig \
+    --name $(terraform output -raw cluster_name)
+
+```
